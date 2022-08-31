@@ -71,7 +71,8 @@ namespace VeryTinyProxy
                 {
                     if (buffer[i] == 32)
                     {
-
+                        var connect = buffer[..(i - 1)];
+                        Validate(connect, "CONNECT");
                         return ParseNext(buffer, i, next, command);
                     }
                 }
